@@ -35,7 +35,7 @@ export class AuthService {
      return this.updateUserData(credential.user);
    }
 
-   async SignIn(email, password){
+    SignIn(email, password){
       return this.fireAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
@@ -47,7 +47,7 @@ export class AuthService {
       })
    }
 
-   async SignUp(email, password){
+    SignUp(email, password){
       return this.fireAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((result) =>{
         this.SendVerificationEmail();
@@ -76,6 +76,10 @@ export class AuthService {
       }).catch((error) => {
         window.alert(error);
       })
+   }
+
+   FacebookSignIn(){
+      return this.GeneralLogin(new auth.FacebookAuthProvider());
    }
 
    GeneralLogin(provider){

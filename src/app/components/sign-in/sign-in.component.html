@@ -1,3 +1,10 @@
-<p>
-  sign-in works!
-</p>
+<div class="text-center">
+  <h2 class="text-center">Log In</h2>
+  <input type="text" placeholder="User Name" #userName required>
+  <input type="password" placeholder="Password" #password required>
+  <button (click)= "auth.SignIn(userName.value, password.value)">Log in</button>
+</div>
+<div class="text-center">
+<span routerLink = "/forgotPassword">Forgot Password?</span>
+<span>No account ?<span routerLink="/createAccount">Sign Up</span></span>
+</div>
