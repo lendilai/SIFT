@@ -1,3 +1,11 @@
-<p>
-  sign-up works!
-</p>
+<div>
+  <h2>Sign Up</h2>
+  <input type="email" placeholder="Email" required #email>
+  <input type="password" placeholder="password" required #password>
+  <button (click)= "auth.SignUp(email.value, password.value)">Sign Up</button>
+
+  <span>Or</span>
+  <button (click)="auth.FacebookSignIn()">Facebook login</button>
+
+  <span>Have an Account<span routerLink="sign-in"Log In></span></span>
+</div>
