@@ -78,6 +78,18 @@ export class AuthService {
       })
    }
 
+   GeneralLogin(provider){
+      return this.fireAuth.auth.signInWithPopup(provider)
+      .then((result) => {
+        this.ngZone.run(() => {
+          this.router.navigate(['home']);
+        })
+        this.updateUserData(result.user);
+      }).catch((error) => {
+        window.alert(error);
+      })
+   }
+
    private updateUserData(user){
       const userRef: AngularFirestoreDocument<User> = this.firestore.doc('users/${user.uid}');
 
