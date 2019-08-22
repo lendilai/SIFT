@@ -15,7 +15,8 @@ export class AuthService {
   constructor(
     private fireAuth: AngularFireAuth,
     private firestore: AngularFirestore,
-    private router: Router
+    private router: Router,
+    private ngZone:NgZone
   ) {
     this.user$ = this.fireAuth.authState.pipe(
       switchMap(user => {
