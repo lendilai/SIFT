@@ -32,13 +32,50 @@ export class AuthService {
    async googleSignIn(){
      const provider = new auth.GoogleAuthProvider();
      const credential = await this.fireAuth.auth.signInWithPopup(provider);
-    //  console.log(this.updateUserData(credential.user));
      return this.updateUserData(credential.user);
+   }
+
+   async SignIn(email, password){
+      return this.fireAuth.auth.signInWithEmailAndPassword(email, password)
+      .then((result) => {
+        this.ngZone.run(() => {
+          this.router.navigate(['home']);
+        });
+        this.updateUserData(result.user);
+      }).catch((error) => {
+        window.alert(error.message)
+      })
+   }
+
+   async SignUp(email, password){
+      return this.fireAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then((result) =>{
+        this.SendVerificationEmail();
+        this.updateUserData(result.user);
+      }).catch((error) => {
+        window.alert(error.message);
+      })
    }
 
    async signOut(){
      await this.fireAuth.auth.signOut();
      return this.router.navigate(['/']);
+   }
+
+   SendVerificationEmail(){
+     return this.fireAuth.auth.currentUser.sendEmailVerification()
+     .then(() => {
+       this.router.navigate(['verify']);
+     })
+   }
+
+   ForgotPassword(emailToReset){
+      return this.fireAuth.auth.sendPasswordResetEmail(emailToReset)
+      .then(() => {
+        window.alert("An email has benn sent to your gmail account");
+      }).catch((error) => {
+        window.alert(error);
+      })
    }
 
    private updateUserData(user){
