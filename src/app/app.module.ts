@@ -3,6 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { RetailersComponent } from './retailers/retailers.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router'
+import { from } from 'rxjs';
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -24,9 +33,16 @@ const firebaseConfig = {
  appId: "1:650436830549:web:6ec5277687954807"
 };
 
+
 @NgModule({
   declarations: [
     AppComponent,
+
+    LandingPageComponent,
+    LoginComponent,
+    RegistrationComponent,
+    RetailersComponent
+
     HomeComponent,
     SignInComponent,
     SignUpComponent,
@@ -36,6 +52,13 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    RouterModule.forRoot([
+      { path: '', component: LandingPageComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegistrationComponent },
+      { path: 'retailers', component: RetailersComponent }
+    ])
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,

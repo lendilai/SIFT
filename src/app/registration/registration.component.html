@@ -1,0 +1,32 @@
+<section class="contact-area ptb--100" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Sign Up</h2>
+      <br>
+      <p></p>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-sm-8 col-xs-12">
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <input required ngModel name="name" #name='ngModel' (change)='log(name)' type="text"
+                placeholder="Enter Your Name">
+              <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Username is required</div>
+              <input required ngModel type="text" name="email" placeholder="Enter Your Email">
+              <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Email is required</div>
+              <input required ngModel type="text" name="password" placeholder="Enter Your Password">
+              <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Password is required</div>
+              <input required ngModel type="text" name="password" placeholder="Enter Your Password">
+              <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Password is required</div>
+            </div>
+            <input type="submit" value="Sign Up" id="send">
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- contact area end -->
