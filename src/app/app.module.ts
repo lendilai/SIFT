@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+// import { AgmCoreModule } from '@agm/core'
 
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
@@ -52,6 +53,11 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyAJXMzzE17saSH55EZCT2m1YLsfaEWfNsY',
+    //   libraries: ['places']
+    // }),
+
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: LandingPageComponent },
