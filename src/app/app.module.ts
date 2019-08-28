@@ -41,7 +41,7 @@ const firebaseConfig = {
     LandingPageComponent,
     LoginComponent,
     RegistrationComponent,
-    RetailersComponent
+    RetailersComponent,
 
     HomeComponent,
     SignInComponent,
@@ -57,8 +57,9 @@ const firebaseConfig = {
       { path: '', component: LandingPageComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegistrationComponent },
+      // {path:'createAccount', component:SignUpComponent},
       { path: 'retailers', component: RetailersComponent }
-    ])
+    ]),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,

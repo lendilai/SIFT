@@ -5,7 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { User } from './user.model';
+import { User } from './user.module';
 
 @Injectable({
   providedIn: 'root'
@@ -29,17 +29,15 @@ export class AuthService {
     );
    }
 
-   async googleSignIn(){
-     const provider = new auth.GoogleAuthProvider();
-     const credential = await this.fireAuth.auth.signInWithPopup(provider);
-     return this.updateUserData(credential.user);
+   googleSignIn(){
+     return this.GeneralLogin(new auth.GoogleAuthProvider);
    }
 
-    SignIn(email, password){
+    async SignIn(email, password){
       return this.fireAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['home']);
+          this.router.navigate(['/']);
         });
         this.updateUserData(result.user);
       }).catch((error) => {
@@ -47,7 +45,7 @@ export class AuthService {
       })
    }
 
-    SignUp(email, password){
+    async SignUp(email, password){
       return this.fireAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((result) =>{
         this.SendVerificationEmail();
@@ -59,7 +57,7 @@ export class AuthService {
 
    async signOut(){
      await this.fireAuth.auth.signOut();
-     return this.router.navigate(['/']);
+     return this.router.navigate(['/sign-in']);
    }
 
    SendVerificationEmail(){
@@ -86,7 +84,7 @@ export class AuthService {
       return this.fireAuth.auth.signInWithPopup(provider)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['home']);
+          this.router.navigate(['/']);
         })
         this.updateUserData(result.user);
       }).catch((error) => {

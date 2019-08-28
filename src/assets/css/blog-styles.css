@@ -91,17 +91,18 @@
 
 .crumbs-area {
     width: 100%;
-    background: #ece4e4;
+    background: #fff;
     display: flex;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: left;
     position: relative;
 }
 
  .crumbs-inner {
     width: 100%;
-    margin-top: 72px;
-    padding: 60px 0px;
+    margin-top: 100px;
+    padding: 20px 0px;
+    border-bottom: 1px solid #272727;
 }
 .crumbs-inner h2 {
     text-transform: uppercase;
@@ -111,8 +112,29 @@
     font-size: 36px;
 }
 
+.btn-outline-primary{
+    border-radius: 3px;
+    color: #222 !important;
+    margin-right: 10px;
+    
+}
+
+
+.retailer-filter input{
+    width: 50%;
+    height: 45px;
+    margin-top: 10px;
+    /* margin-bottom: 20px; */
+    padding-left: 15px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+    color: #222;
+    align-items: center;
+}
+
 .blog-post-area {
-    padding-top: 120px;
+    padding-top: 30px;
 }
 
 .blog-post-area .list-item {

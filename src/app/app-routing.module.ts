@@ -9,7 +9,6 @@ import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  {path:'', redirectTo:'/sign-in', pathMatch:'full'},
   {path:'forgotPassword', component:ForgotPasswordComponent},
   {path:'home', component:HomeComponent, canActivate:[AuthGuard]},
   {path:'sign-in', component:SignInComponent},

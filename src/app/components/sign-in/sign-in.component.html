@@ -1,10 +1,53 @@
-<div class="text-center">
+<!-- <div class="text-center">
   <h2 class="text-center">Log In</h2>
   <input type="text" placeholder="User Name" #userName required>
   <input type="password" placeholder="Password" #password required>
-  <button (click)= "auth.SignIn(userName.value, password.value)">Log in</button>
+  <button (click)="auth.SignIn(userName.value, password.value)">Log in</button>
 </div>
 <div class="text-center">
-<span routerLink = "/forgotPassword">Forgot Password?</span>
-<span>No account ?<span routerLink="/createAccount">Sign Up</span></span>
-</div>
+  <span routerLink="/forgotPassword">Forgot Password?</span>
+  <span>No account ?<span routerLink="/createAccount">Sign Up</span></span>
+</div> -->
+<!-- <div class="col-md-8 col-sm-6 col-xs-12">
+  <div class="contact-form">
+    <form action="#">
+      <input type="text" placeholder="Email" #email required>
+      <input type="password" placeholder="Password" #password required>
+      <button (click)="auth.SignIn(email.value, password.value)">Log in</button>
+      <span routerLink="/forgotPassword">Forgot Password?</span>
+      <span>No account ?<span routerLink="/createAccount">Sign Up</span></span>
+    </form>
+
+  </div>
+</div> -->
+
+<section class="contact-area ptb--100" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Sign In</h2>
+      <br>
+      <p></p>
+    </div>
+    <div class="row ">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <div class="contact-form">
+          <form action="#" class="">
+            <input type="text" placeholder="Email" #email required> <br>
+            <input type="password" placeholder="Password" #password required> <br>
+            <!-- <p>No account?<a routerLink="/createAccount"> Sign Up</a></p> -->
+            <input type="submit" value="Sign In" id="send" (click)="auth.SignIn(email.value, password.value)"> <br>
+            <p>Or sign Up with Google</p>
+            <!-- <button (click)="auth.SignIn(email.value, password.value)">Log in</button> -->
+            <!-- <button (click)="auth.googleSignIn()">google</button> -->
+            <input type="submit" value="Google" id="send" (click)="auth.googleSignIn()"> <br>
+            <a routerLink="/forgotPassword"> Forgot Password?</a>
+            <p>No account?<a routerLink="/createAccount"> Sign Up Here </a></p>
+          </form>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+</section>
+<!-- contact area end -->

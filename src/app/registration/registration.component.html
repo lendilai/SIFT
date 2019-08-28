@@ -13,14 +13,14 @@
               <input required ngModel name="name" #name='ngModel' (change)='log(name)' type="text"
                 placeholder="Enter Your Name">
               <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Username is required</div>
-              <input required ngModel type="text" name="email" placeholder="Enter Your Email">
+              <input required ngModel type="text" name="email" placeholder="Enter Your Email" #email>
               <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Email is required</div>
-              <input required ngModel type="text" name="password" placeholder="Enter Your Password">
+              <input required ngModel type="text" name="password" placeholder="Enter Your Password" #password>
               <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Password is required</div>
               <input required ngModel type="text" name="password" placeholder="Enter Your Password">
               <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Password is required</div>
             </div>
-            <input type="submit" value="Sign Up" id="send">
+            <button type="submit" (click)="auth.SignUp(email.value, password.value)">Sign Up</button>
           </form>
         </div>
       </div>

@@ -14,6 +14,15 @@
         <div class="slider-inner text-right">
           <h2 style="letter-spacing: 0.5rem">WELCOME TO S.I.F.T</h2>
           <h5>Find A Retailer Near You !</h5>
+
+
+
+  <div *ngIf="auth.user$ | async as user; else login">
+    <img src="{{user.photoURL}}">
+    <button (click)="auth.signOut()">Sign Out</button>
+  </div>
+
+
           <div class="contact-form">
             <form action="#">
               <input type="text" name="name" placeholder="Search For products">
