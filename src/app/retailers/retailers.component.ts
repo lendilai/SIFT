@@ -7,11 +7,9 @@ import { Options, LabelType } from 'ng5-slider';
   styleUrls: ['./retailers.component.css']
 })
 export class RetailersComponent implements OnInit {
-
-  constructor() { }
   private minPrice: number;
   private maxPrice: number;
-  private modalIsVisible:boolean = true;
+  private modalIsVisible:boolean = false;
   private ratingVisible:boolean = false;
   private ratingValue;
   minValue:number = 500;
@@ -43,7 +41,7 @@ export class RetailersComponent implements OnInit {
     this.modalIsVisible = false;
   }
 
-
+  constructor() { }
   ngOnInit() {
   }
 

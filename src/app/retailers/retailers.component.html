@@ -9,7 +9,7 @@
             Filter by
           </p> -->
           <div class="retailer-filter">
-            <button type="button" class="btn btn-outline-primary rounded-lg" style="font-size: 10px">
+            <button type="button" class="btn btn-outline-primary rounded-lg" (click)="toggle()" style="font-size: 10px">
               Price
             </button>
             <button type="button" class="btn btn-outline-primary rounded-lg" style="font-size: 10px">
@@ -22,6 +22,29 @@
     </div>
   </div>
 </div>
+
+
+
+
+<div class="priceModal" id="priceModal" *ngIf="modalIsVisible">
+  <div class="modContent">
+    <div class="modHeader">
+      <span class="close" (click)="toggle()">&times;</span>
+    </div>
+    <div class="customSlider">
+      <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+      <div class="priceInputs">
+      <strong>Min. Price     </strong><input type="number" value="{{minPrice}}"><br>
+      <strong>Max. Price </strong><input type="number" value="{{maxPrice}}">
+      </div>
+    </div>
+    <div class="modBody">
+    </div>
+  </div>
+</div>
+
+
+
 <!-- crumbs area end -->
 <!-- blog post area start -->
 <div class="blog-post-area">

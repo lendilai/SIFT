@@ -56,7 +56,7 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Ng5SliderModule
+    Ng5SliderModule,
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyAJXMzzE17saSH55EZCT2m1YLsfaEWfNsY',
     //   libraries: ['places']
