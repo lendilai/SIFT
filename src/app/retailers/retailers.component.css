@@ -93,3 +93,34 @@
   .modContentRating input:checked~label::after {
     opacity: 1;
   }
+
+  @media only screen and (max-width:600px){
+    .priceModal{
+      width: 90%;
+      padding: 3.5%;
+    }
+  
+    .ratingModal{
+      width:90%;
+    }
+  
+    .modContentRating label::after{
+      font-size: 20px;
+    }
+  
+    .modContentRating label::before{
+      font-size: 20px;
+    }
+  
+    .ratingModal .modContentRating{
+      margin-top: 12%;
+    }
+  .close{
+      margin-top: 2%;
+  }
+
+  .priceInputs input{
+      width:90%;
+  }
+  
+  }
