@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Options, LabelType } from 'ng5-slider';
+import { Router } from '@angular/router';
+import { ProductService } from '../services/product.service';
+
 
 @Component({
   selector: 'app-retailers',
@@ -7,6 +10,7 @@ import { Options, LabelType } from 'ng5-slider';
   styleUrls: ['./retailers.component.css']
 })
 export class RetailersComponent implements OnInit {
+  public searchterm: string;
   public prod: string;
   products;
   public retail: string;
@@ -14,39 +18,39 @@ export class RetailersComponent implements OnInit {
   dealers = [];
   private minPrice: number;
   private maxPrice: number;
-  private modalIsVisible:boolean = false;
-  private ratingVisible:boolean = false;
+  private modalIsVisible = false;
+  private ratingVisible = false;
   private ratingValue;
-  minValue:number = 500;
-  maxValue: number = 30000;
-  options:Options = {
+  minValue = 500;
+  maxValue = 30000;
+  options: Options = {
     floor: 0,
     ceil: 50000,
-    animate:false,
-    translate: (value:number, label:LabelType): string => {
-      switch(label){
+    animate: false,
+    translate: (value: number, label: LabelType): string => {
+      switch (label) {
         case LabelType.Low:
           this.minPrice = value;
-          return "<b></b>" + value;
+          return '<b></b>' + value;
         case LabelType.High:
           this.maxPrice = value;
-            return "<b></b>" + value;
+          return '<b></b>' + value;
             default:
-              return "Kes"+ value;
+              return 'Kes'+ value;
       }
     }
   };
-  toggle(){
+  toggle() {
     this.modalIsVisible  = !this.modalIsVisible;
     this.ratingVisible = false;
   }
 
-  toggleRating(){
+  toggleRating() {
     this.ratingVisible = !this.ratingVisible;
     this.modalIsVisible = false;
   }
 
-  constructor() { }
+  constructor(private prods: ProductService, private router: Router) { }
   ngOnInit() {
     this.prod = localStorage.getItem('products');
     this.products = JSON.parse(this.prod);
@@ -65,6 +69,19 @@ export class RetailersComponent implements OnInit {
       }
     }
     console.log(this.dealers);
+  }
+
+  searchProduct() {
+    this.prods.searchProduct(this.searchterm).subscribe(res => {
+      this.products = JSON.stringify(res);
+      console.log(this.products);
+      localStorage.setItem('products', this.products);
+      this.router.navigate(['/retailers']);
+    },
+    err => {
+      console.log(err);
+      alert('Could not find the item you\'re looking for');
+    });
   }
 
 }
