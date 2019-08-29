@@ -59,20 +59,20 @@
 
 <!-- crumbs area end -->
 <!-- blog post area start -->
-<div class="blog-post-area">
+<div class="blog-post-area" >
   <div class="container">
     <div class="row">
       <div class="blog-list">
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="list-item">
+        <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let prod of dealers">
+          <div class="list-item" >
             <div class="blog-thumbnail">
-              <a href="blog-details.html"><img src="assets/img/blog/blog-post-img.jpg" alt="blog thumbnail"></a>
+              <a href="blog-details.html"><img src="{{prod.products.image}}" alt="blog thumbnail"></a>
             </div>
-            <p>JUMIA FOODS</p>
-            <h2 class="blog-title"><a href="#">BURGER</a></h2>
+            <p>{{prod.name}}</p>
+            <h2 class="blog-title">{{prod.products.name}}</h2>
             <div class="blog-meta">
               <div class="blog-summery">
-                <p>1200 KES</p>
+                <p>{{prod.products.price}} KES</p>
               </div>
               <ul>
                 <li>
@@ -83,62 +83,47 @@
                   <i class="fa fa-star" aria-hidden="true"></i>
                 </li>|
                 <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                  data-target="#exampleModalScrollable" style="font-size: 10px">
+                  data-target="#basicExampleModal" style="font-size: 10px">
                   View Details
                 </button>
-                <!-- Button trigger modal -->
-                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
-                  Launch demo modal
-                </button> -->
               </ul>
             </div>
-
+            <!-- <a href="blog.html" class="read-more">Read More</a> -->
             <!-- Modal -->
-            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
-              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title text-center" id="exampleModalScrollableTitle">Modal title</h5>
+            <div class="modal fade rounded" id="basicExampleModal" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content ">
+                  <div class="modal-header" style="background-color: #6668F9 !important">
+                    <h5 class="modal-title text-center" id="exampleModalLabel">Product Details</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
                     <div class="row">
-                      <div class="col-md-12">
+                      <div class="col-md-8 ml-5">
                         <div class="list-item">
-                          <!-- <p>JUMIA FOODS</p> -->
+                          <div class="blog-thumbnail">
+                            <a href="blog-details.html"><img src="assets/img/blog/blog-post-img2.jpg"
+                                alt="blog thumbnail"></a>
+                          </div>
+                          <p>JUMIA FOODS</p>
                           <h2 class="blog-title"><a href="#">BURGER</a></h2>
                           <div class="blog-meta">
                             <div class="blog-summery">
                               <p>1200 KES</p>
                             </div>
-                            <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam laudantium illo sint.
-                              Facilis consequatur saepe qui vel porro sunt ad harum, deserunt distinctio ea! Quis
-                              incidunt impedit sunt laborum accusamus?
-                            </p>
-                          </div>
-                        </div>
-                        <div class="list-item">
-                          <!-- <p>JUMIA FOODS</p> -->
-                          <h2 class="blog-title"><a href="#">MASOKO</a></h2>
-                          <div class="blog-meta">
-                            <div class="blog-summery">
-                              <p>2 KM Away</p>
-                            </div>
-                            <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam laudantium illo sint.
-                              Facilis consequatur saepe qui vel porro sunt ad harum, deserunt distinctio ea! Quis
-                              incidunt impedit sunt laborum accusamus?
-                            </p>
                             <ul>
+                              <li>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                              </li>|
                               <button type="button" class="btn btn-outline-primary rounded-lg" style="font-size: 10px">
-                                Visit Site
-                              </button>
-                              <button type="button" class="btn btn-outline-primary rounded-lg" style="font-size: 10px">
-                                View Map
+                                View Details
                               </button>
                             </ul>
                           </div>
@@ -147,74 +132,11 @@
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                    <button type="button" class="btn btn-primary" data-dismiss="modal"
-                      style="font-size: 10px; background-color: #6668F9 !important">
-                      Close
-                    </button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                      style="background-color: #6668F9 !important">Close</button>
                   </div>
                 </div>
               </div>
-            </div>
-
-
-
-
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="list-item">
-            <div class="blog-thumbnail">
-              <a href="blog-details.html"><img src="assets/img/blog/blog-post-img1.jpg" alt="blog thumbnail"></a>
-            </div>
-            <p>JUMIA FOODS</p>
-            <h2 class="blog-title"><a href="#">BURGER</a></h2>
-            <div class="blog-meta">
-              <div class="blog-summery">
-                <p>1200 KES</p>
-              </div>
-              <ul>
-                <li>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </li>|
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                  data-target="#basicExampleModal" style="font-size: 10px">
-                  View Details
-                </button>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="list-item">
-            <div class="blog-thumbnail">
-              <a href="blog-details.html"><img src="assets/img/blog/blog-post-img2.jpg" alt="blog thumbnail"></a>
-            </div>
-            <p>JUMIA FOODS</p>
-            <h2 class="blog-title"><a href="#">BURGER</a></h2>
-            <div class="blog-meta">
-              <div class="blog-summery">
-                <p>1200 KES</p>
-              </div>
-              <ul>
-                <li>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </li>|
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                  data-target="#basicExampleModal" style="font-size: 10px">
-                  View Details
-                </button>
-              </ul>
             </div>
           </div>
         </div>
