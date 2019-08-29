@@ -7,6 +7,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { AuthGuard } from './services/auth.guard';
+import { RetailersComponent } from './retailers/retailers.component';
 
 const routes: Routes = [
   {path:'forgotPassword', component:ForgotPasswordComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'sign-in', component:SignInComponent},
   {path:'createAccount', component:SignUpComponent},
   {path:'verify', component:VerifyEmailComponent},
+  {path:'retailers', component:RetailersComponent}
 ];
 
 @NgModule({
