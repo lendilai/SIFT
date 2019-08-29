@@ -8,14 +8,15 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { AuthGuard } from './services/auth.guard';
 import { RetailersComponent } from './retailers/retailers.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
-  {path:'forgotPassword', component:ForgotPasswordComponent},
-  {path:'home', component:HomeComponent, canActivate:[AuthGuard]},
-  {path:'sign-in', component:SignInComponent},
-  {path:'createAccount', component:SignUpComponent},
-  {path:'verify', component:VerifyEmailComponent},
-  {path:'retailers', component:RetailersComponent}
+  {path: 'forgotPassword', component: ForgotPasswordComponent},
+  {path: '', component: LandingPageComponent},
+  {path: 'sign-in', component: SignInComponent},
+  {path: 'createAccount', component: SignUpComponent},
+  {path: 'verify', component: VerifyEmailComponent},
+  {path: 'retailers', component: RetailersComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

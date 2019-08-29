@@ -16,7 +16,7 @@
           <h5>Find A Retailer Near You !</h5>
           <div class="contact-form">
             <form action="#">
-              <input type="text" name="name" placeholder="Search For products">
+              <input type="text" name="product" placeholder="Search For products" [(ngModel)]='searchterm' (keyup.enter)="searchProduct()">
             </form>
           </div>
         </div>
