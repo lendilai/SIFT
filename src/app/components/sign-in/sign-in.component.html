@@ -33,6 +33,7 @@
         <div class="contact-form">
           <form action="#" class="">
             <input type="text" placeholder="Email" #email required> <br>
+            <!-- <input type="file" accept="/image*"  capture="user" > <br> -->
             <input type="password" placeholder="Password" #password required> <br>
             <!-- <p>No account?<a routerLink="/createAccount"> Sign Up</a></p> -->
             <input type="submit" value="Sign In" id="send" (click)="auth.SignIn(email.value, password.value)"> <br>
