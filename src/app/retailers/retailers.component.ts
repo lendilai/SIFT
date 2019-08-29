@@ -16,11 +16,11 @@ export class RetailersComponent implements OnInit {
   public retail: string;
   retailers;
   dealers = [];
-  private loaded:boolean = false;
+  public loaded:boolean = false;
   private minPrice: number;
   private maxPrice: number;
-  private modalIsVisible = false;
-  private ratingVisible = false;
+  public modalIsVisible = false;
+  public ratingVisible = false;
   private ratingValue;
   minValue = 500;
   maxValue = 30000;

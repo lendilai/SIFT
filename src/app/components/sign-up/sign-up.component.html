@@ -21,7 +21,7 @@
         <div class="contact-form">
           <form>
             <div class="form-group">
-              <input required ngModel name="name" #name='ngModel' (change)='log(name)' type="text"
+              <input required ngModel name="name" #name='ngModel' type="text"
                 placeholder="Enter Your Name">
               <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Username is required</div>
               <input required ngModel type="text" name="email" placeholder="Enter Your Email" #email>
