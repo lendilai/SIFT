@@ -11,11 +11,11 @@ import { ProductService } from './services/product.service';
 })
 
 export class AppComponent implements OnInit {
-  constructor(public auth: AuthService, private prod: ProductService){}
-  title: string = 'SIFT-Frontend';
+  constructor(public auth: AuthService, private prod: ProductService) {}
+  title = 'SIFT-Frontend';
   latitude: number;
   longitude: number;
-  zoom:number;
+  zoom: number;
   coordinates = {latitude: 0, longitude: 0};
   public location: string;
   public locations: string;

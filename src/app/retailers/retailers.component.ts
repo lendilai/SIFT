@@ -76,7 +76,8 @@ export class RetailersComponent implements OnInit {
       this.products = JSON.stringify(res);
       console.log(this.products);
       localStorage.setItem('products', this.products);
-      this.router.navigate(['/retailers']);
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+      this.router.navigate(['/retailers']));
     },
     err => {
       console.log(err);

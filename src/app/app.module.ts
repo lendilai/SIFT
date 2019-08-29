@@ -11,7 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RetailersComponent } from './retailers/retailers.component';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
 import { from } from 'rxjs';
 
 import { AngularFireModule } from '@angular/fire';
@@ -27,13 +27,13 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { FiltersComponent } from './filters/filters.component';
 
 const firebaseConfig = {
- apiKey: "AIzaSyAvYCgR9Kz3ACF91YfQL-vV-mN7JPYD2B4",
- authDomain: "testing-5c7bc.firebaseapp.com",
- databaseURL: "https://testing-5c7bc.firebaseio.com",
- projectId: "testing-5c7bc",
- storageBucket: "",
- messagingSenderId: "650436830549",
- appId: "1:650436830549:web:6ec5277687954807"
+ apiKey: 'AIzaSyAvYCgR9Kz3ACF91YfQL-vV-mN7JPYD2B4',
+ authDomain: 'testing-5c7bc.firebaseapp.com',
+ databaseURL: 'https://testing-5c7bc.firebaseio.com',
+ projectId: 'testing-5c7bc',
+ storageBucket: '',
+ messagingSenderId: '650436830549',
+ appId: '1:650436830549:web:6ec5277687954807'
 };
 
 
@@ -63,13 +63,7 @@ const firebaseConfig = {
     // }),
 
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: LandingPageComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegistrationComponent },
-      // {path:'createAccount', component:SignUpComponent},
-      { path: 'retailers', component: RetailersComponent }
-    ]),
+    AppRoutingModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
