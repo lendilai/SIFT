@@ -16,6 +16,7 @@ export class RetailersComponent implements OnInit {
   public retail: string;
   retailers;
   dealers = [];
+  private loaded:boolean = false;
   private minPrice: number;
   private maxPrice: number;
   private modalIsVisible = false;
