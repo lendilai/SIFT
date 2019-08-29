@@ -1,0 +1,95 @@
+.priceModal{
+    width:30%;
+    margin: 1.5%;
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+    box-shadow: 3px 3px 3px grey;
+    padding: 2%;
+    z-index: 1000;
+    position: absolute;
+    background-color: white;
+  }
+  .ratingModal{
+    width:30%;
+    margin: 1.5%;
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+    box-shadow: 3px 3px 3px grey;
+    padding: 2%;
+    height: 100px;
+    z-index: 1000;
+    position: absolute;
+    background-color: white;
+  }
+  
+  .ratingModal .modContentRating{
+    margin-top: 2%;
+  }
+  .close, .closeRating{
+    margin-top: -4%;
+    margin-bottom: 2%;
+    float: right;
+    font-size: 22px;
+    padding:1px 5px 1px 5px;
+    border: 1px solid black;
+    border-radius: 45%;
+  }
+  
+  .close:hover, .closeRating:hover{
+    cursor: pointer;
+  }
+  
+  .priceInputs{
+    margin-top: 5%;
+  }
+  .priceInputs input{
+    margin-bottom: 3%;
+    height:35px;
+    font-size: 16px;
+    color: gray;
+    padding-left: 16px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+  }
+  
+  .modContentRating {
+    position: absolute;
+    display: flex;
+    transform:rotateY(180deg);
+  }
+  
+  .modContentRating input {
+    display: none;
+  }
+  
+  .modContentRating label {
+    cursor: pointer;
+    background-color: white;
+    width: 50px;
+  }
+  
+  .modContentRating label::before {
+    content: '\f005';
+    font-family: fontAwesome;
+    display: block;
+    position: relative;
+    font-size: 40px;
+    color: grey;
+  }
+  
+  .modContentRating label::after {
+    content: '\f005';
+    font-family: fontAwesome;
+    display: block;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    font-size: 40px;
+    color: #6668F9;
+  }
+  
+  .modContentRating label:hover::after,
+  .modContentRating label:hover~label:after,
+  .modContentRating input:checked~label::after {
+    opacity: 1;
+  }
