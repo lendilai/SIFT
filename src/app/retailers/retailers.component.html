@@ -12,7 +12,7 @@
             <button type="button" class="btn btn-outline-primary rounded-lg" (click)="toggle()" style="font-size: 10px">
               Price
             </button>
-            <button type="button" class="btn btn-outline-primary rounded-lg" style="font-size: 10px">
+            <button type="button" class="btn btn-outline-primary rounded-lg" (click)="toggleRating()" style="font-size: 10px">
               Rating
             </button>
             <input type="text" name="name" placeholder="Search For products">
@@ -43,6 +43,18 @@
   </div>
 </div>
 
+<div class="ratingModal" id="ratingModal" *ngIf="ratingVisible">
+  <div class="modHeader">
+    <span class="closeRating" (click)="toggleRating()">&times;</span>
+  </div>
+  <div class="modContentRating">
+    <input type="radio" name="star" id="star1" value="1"><label for="star1"></label>
+    <input type="radio" name="star" id="star2" value="2" ><label for="star2"></label>
+    <input type="radio" name="star" id="star3" value="3"><label for="star3"></label>
+    <input type="radio" name="star" id="star4" value="4"><label for="star4"></label>
+    <input type="radio" name="star" id="star5" value="5"><label for="star5"></label><br>
+  </div>
+</div>
 
 
 <!-- crumbs area end -->
