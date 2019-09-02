@@ -22,6 +22,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const firebaseConfig = {
  apiKey: "AIzaSyAvYCgR9Kz3ACF91YfQL-vV-mN7JPYD2B4",
@@ -47,7 +48,8 @@ const firebaseConfig = {
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

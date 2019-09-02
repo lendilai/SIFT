@@ -11,28 +11,34 @@
 </div> -->
 <section class="contact-area ptb--100" id="contact">
   <div class="container">
-    <div class="section-title">
+    <div class="section-title text-center">
       <h2>Sign Up</h2>
       <br>
       <p></p>
     </div>
     <div class="row">
-      <div class="col-md-8 col-sm-8 col-xs-12">
+      <div class="col-md-3 col-sm-3 col-xs-12"></div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="contact-form">
           <form>
-            <div class="form-group">
+            <div class="form-group ">
               <input required ngModel name="name" #name='ngModel' (change)='log(name)' type="text"
-                placeholder="Enter Your Name">
+                placeholder="Enter Your Name"> <br>
               <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Username is required</div>
-              <input required ngModel type="text" name="email" placeholder="Enter Your Email" #email>
+              <input required ngModel type="text" name="email" placeholder="Enter Your Email" #email> <br>
               <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Email is required</div>
-              <input required ngModel type="password" name="password" placeholder="Enter Your Password" #password>
+              <input required ngModel type="password" name="password" placeholder="Enter Your Password" #password> <br>
               <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Password is required</div>
-              <input required ngModel type="text" name="password" placeholder="Enter Your Password">
+              <input required ngModel type="text" name="password" placeholder="Enter Your Password" #confirm>
               <div class="alert alert-danger" *ngIf='name.touched && !name.valid'>Password is required</div>
             </div>
-            <input type="submit" value="Sign Up" id="send" (click)="auth.SignUp(email.value, password.value)"> <br>
+            <input type="submit" value="Sign Up" id="send" (click)="auth.SignUp(email.value, password.value, confirm.value)"> <br>
+            <!-- <input type="submit" value="Google"  id="send" (click)="auth.googleSignIn()"><br> -->
+            <button type="button" class="btn btn-outline-primary rounded-lg" style="font-size: 11px; padding: 13px 36px !important;"  (click)="auth.googleSignIn()">
+              <i class="fab fa-google fa-lg red-text"></i> Google
+            </button>
             <!-- <button type="submit" (click)="auth.SignUp(email.value, password.value)">Sign Up</button> -->
+            <p>Already Have An Account?<a routerLink="/sign-in"> Sign In Here </a></p>
           </form>
         </div>
       </div>
