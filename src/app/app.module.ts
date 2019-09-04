@@ -4,7 +4,7 @@ import { Ng5SliderModule } from 'ng5-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { AgmCoreModule } from '@agm/core'
+import { AgmCoreModule } from '@agm/core'
 
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
@@ -26,6 +26,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 import { FiltersComponent } from './filters/filters.component';
+import { GmapComponent } from './gmap/gmap.component';
 
 
 const firebaseConfig = {
@@ -54,17 +55,19 @@ const firebaseConfig = {
     ForgotPasswordComponent,
     VerifyEmailComponent,
 
-    FiltersComponent
+    FiltersComponent,
+
+    GmapComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     Ng5SliderModule,
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'AIzaSyAJXMzzE17saSH55EZCT2m1YLsfaEWfNsY',
-    //   libraries: ['places']
-    // }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAJXMzzE17saSH55EZCT2m1YLsfaEWfNsY',
+      libraries: ['places']
+    }),
 
     FormsModule,
     AppRoutingModule,
