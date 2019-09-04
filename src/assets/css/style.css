@@ -335,7 +335,7 @@ canvas.worms.sketch{
 }
 .contact-form #send{
     height: 45px;
-    width: 150px;
+    width: 100%;
     background: #5a10fb;
     color: #fff;
     text-align: center;
