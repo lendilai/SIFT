@@ -24,6 +24,7 @@ export class RetailersComponent implements OnInit {
   public ratingVisible = false;
   public loading:boolean;
   private ratingValue;
+  public num:number;
   minValue = 500;
   maxValue = 30000;
   options: Options = {
@@ -63,7 +64,7 @@ export class RetailersComponent implements OnInit {
     this.loading = JSON.parse(localStorage.getItem('loading'));
     setTimeout(() => {
       this.loading = false;
-    }, 0);
+    }, 3000);
     if (this.retailers.length < 1) {
       alert('This service couldn\'t get your location, Please allow browser to access your location');
     }
@@ -75,6 +76,8 @@ export class RetailersComponent implements OnInit {
         }
       }
     }
+    this.num = this.dealers.length;
+
     console.log(this.dealers);
   }
 
