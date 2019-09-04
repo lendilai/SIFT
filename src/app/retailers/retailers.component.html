@@ -66,64 +66,66 @@
 
 
         <!-- skele -->
-        <div class="col-md-4 col-sm-6 col-xs-12" *ngIf="loaded else showThem">
-            <div class="list-item">
-              <div class="blog-thumbnail">
-                <ngx-skeleton-loader count="1" appearance="circle"
-                [theme]="{
-                  'background-color':'lightgrey',
-                   width:'100%',
-                   height:'200px',
-                  'border-radius':'5px',
-                   margin:'auto'
-                }"
-                ></ngx-skeleton-loader>
-              </div>
-              <ngx-skeleton-loader appearance="lines" 
-              [theme]="{
-                'background-color':'lightgrey',
-                 width:'63%'
-              }"
-              ></ngx-skeleton-loader><br>
-              <ngx-skeleton-loader appearance="lines"
-              [theme]="{
-                'background-color':'lightgrey',
-                 width:'74%'
-              }"
-              ></ngx-skeleton-loader>
-              <div class="blog-meta">
-                <div class="blog-summery">
-                  <ngx-skeleton-loader appearance="lines"
-                  [theme]="{
-                    'background-color':'lightgrey',
-                     width:'59%'
-                  }"
-                  ></ngx-skeleton-loader>
-                </div>
-                <ul>
-                  <li>
-                    <ngx-skeleton-loader count="5" appearance="circle"
-                    [theme]="{
-                      'background-color':'lightgrey', 
-                       width:'15px',
-                       height:'15px'
-                    }"
-                    ></ngx-skeleton-loader>
-                  </li>
-                  <ngx-skeleton-loader appearance="lines" 
-                  [theme]="{
-                    'background-color':'lightgrey',
-                     width:'40%',
-                     height:'35px',
-                     'margin-left':'10%'
-                  }"
-                  ></ngx-skeleton-loader>
-                </ul>
-              </div>
-            </div>
+<div *ngIf="loading else complete">
+  <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let i of Arr(12).fill(1)">
+    <div class="list-item">
+      <div class="blog-thumbnail">
+        <ngx-skeleton-loader count="1" appearance="circle"
+        [theme]="{
+          'background-color':'lightgrey',
+           width:'100%',
+           height:'200px',
+          'border-radius':'5px',
+           margin:'auto'
+        }"
+        ></ngx-skeleton-loader>
+      </div>
+      <ngx-skeleton-loader appearance="lines" 
+      [theme]="{
+        'background-color':'lightgrey',
+         width:'63%'
+      }"
+      ></ngx-skeleton-loader><br>
+      <ngx-skeleton-loader appearance="lines"
+      [theme]="{
+        'background-color':'lightgrey',
+         width:'74%'
+      }"
+      ></ngx-skeleton-loader>
+      <div class="blog-meta">
+        <div class="blog-summery">
+          <ngx-skeleton-loader appearance="lines"
+          [theme]="{
+            'background-color':'lightgrey',
+             width:'59%'
+          }"
+          ></ngx-skeleton-loader>
         </div>
+        <ul>
+          <li>
+            <ngx-skeleton-loader count="5" appearance="circle"
+            [theme]="{
+              'background-color':'lightgrey', 
+               width:'15px',
+               height:'15px'
+            }"
+            ></ngx-skeleton-loader>
+          </li>
+          <ngx-skeleton-loader appearance="lines" 
+          [theme]="{
+            'background-color':'lightgrey',
+             width:'40%',
+             height:'35px',
+             'margin-left':'10%'
+          }"
+          ></ngx-skeleton-loader>
+        </ul>
+      </div>
+    </div>
+</div>
+</div>
         <!-- start -->
-        <ng-template #showThem>
+        <ng-template #complete>
             <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let prod of dealers">
                 <div class="list-item" >
                   <div class="blog-thumbnail">
@@ -137,12 +139,12 @@
                       <p>{{prod.distance | slice:0:4 }} KM Away</p>
                     </div>
                     <ul>
-                      <li>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
+                      <li class="retailerRating">
+                        <input type="radio" [checked]="prod.rating == 5"><label for="stars1"></label>
+                        <input type="radio" [checked]="prod.rating == 4"><label for="stars2"></label>
+                        <input type="radio" [checked]="prod.rating == 3"><label for="stars3"></label>
+                        <input type="radio" [checked]="prod.rating == 2"><label for="stars4"></label>
+                        <input type="radio" [checked]="prod.rating == 1"><label for="stars5"></label>
                       </li>|
                       <button type="button" class="btn btn-outline-primary" data-toggle="modal"
                         data-target="#basicExampleModal" style="font-size: 10px">
