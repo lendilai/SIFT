@@ -24,8 +24,10 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+
 import { FiltersComponent } from './filters/filters.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+
 
 const firebaseConfig = {
  apiKey: 'AIzaSyAvYCgR9Kz3ACF91YfQL-vV-mN7JPYD2B4',
@@ -52,7 +54,9 @@ const firebaseConfig = {
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
+
     FiltersComponent
+
   ],
   imports: [
     BrowserModule,
