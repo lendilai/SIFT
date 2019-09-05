@@ -68,88 +68,155 @@
   <div class="container">
     <div class="row">
       <div class="blog-list">
-        <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let prod of dealers">
-          <div class="list-item" >
-            <div class="blog-thumbnail">
-              <a href="blog-details.html"><img src="{{prod.products.image}}" alt="blog thumbnail"></a>
-            </div>
-            <p>{{prod.name}}</p>
-            <h2 class="blog-title">{{prod.products.name}}</h2>
-            <div class="blog-meta">
-              <div class="blog-summery">
-                <p>{{prod.products.price}} KES</p>
-                <p>{{prod.distance | slice:0:4 }} KM Away</p>
-              </div>
-              <ul>
-                <li>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </li>|
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                  data-target="#basicExampleModal" style="font-size: 10px">
-                  View Details
-                </button>
-              </ul>
-            </div>
-            <!-- <a href="blog.html" class="read-more">Read More</a> -->
-            <!-- Modal -->
-            <div class="modal fade rounded" id="basicExampleModal" tabindex="-1" role="dialog"
-              aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content ">
-                  <div class="modal-header" style="background-color: #6668F9 !important">
-                    <h5 class="modal-title text-center" id="exampleModalLabel">Product Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
+
+
+        <!-- skele -->
+<div *ngIf="loading else complete">
+  <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let i of Arr(num).fill(1)">
+    <div class="list-item">
+      <div class="blog-thumbnail">
+        <ngx-skeleton-loader count="1" appearance="circle"
+        [theme]="{
+          'background-color':'lightgrey',
+           width:'100%',
+           height:'200px',
+          'border-radius':'5px',
+           margin:'auto'
+        }"
+        ></ngx-skeleton-loader>
+      </div>
+      <ngx-skeleton-loader appearance="lines" 
+      [theme]="{
+        'background-color':'lightgrey',
+         width:'63%'
+      }"
+      ></ngx-skeleton-loader><br>
+      <ngx-skeleton-loader appearance="lines"
+      [theme]="{
+        'background-color':'lightgrey',
+         width:'74%'
+      }"
+      ></ngx-skeleton-loader>
+      <div class="blog-meta">
+        <div class="blog-summery">
+          <ngx-skeleton-loader appearance="lines"
+          [theme]="{
+            'background-color':'lightgrey',
+             width:'59%'
+          }"
+          ></ngx-skeleton-loader>
+        </div>
+        <ul>
+          <li>
+            <ngx-skeleton-loader count="5" appearance="circle"
+            [theme]="{
+              'background-color':'lightgrey', 
+               width:'15px',
+               height:'15px'
+            }"
+            ></ngx-skeleton-loader>
+          </li>
+          <ngx-skeleton-loader appearance="lines" 
+          [theme]="{
+            'background-color':'lightgrey',
+             width:'40%',
+             height:'35px',
+             'margin-left':'10%'
+          }"
+          ></ngx-skeleton-loader>
+        </ul>
+      </div>
+    </div>
+</div>
+</div>
+        <!-- start -->
+        <ng-template #complete>
+            <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let prod of dealers">
+                <div class="list-item" >
+                  <div class="blog-thumbnail">
+                    <a href="blog-details.html"><img src="{{prod.products.image}}" alt="blog thumbnail"></a>
                   </div>
-                  <div class="modal-body">
-                    <div class="row">
-                      <div class="col-md-8 ml-5">
-                        <div class="list-item">
-                          <!-- <div class="blog-thumbnail">
-                            <a href="blog-details.html"><img src="assets/img/blog/blog-post-img2.jpg"
-                                alt="blog thumbnail"></a>
-                          </div> -->
-                          <p>{{prod.name}}</p>
-                          <h2 class="blog-title"><a href="#">{{prod.products.name}}</a></h2>
-                          <div class="blog-meta">
-                            <div class="blog-summery">
-                              <p>{{prod.products.price}} KES</p>
-                              <h4>ABOUT RETAILER</h4>
-                              <p>DESCRIPTION: {{prod.description}}</p>
-                              <p>EMAIL: {{prod.email}}</p>
-                              <p>CONTACT: {{prod.contact}}</p>
+                  <p>{{prod.name}}</p>
+                  <h2 class="blog-title">{{prod.products.name}}</h2>
+                  <div class="blog-meta">
+                    <div class="blog-summery">
+                      <p>{{prod.products.price}} KES</p>
+                      <p>{{prod.distance | slice:0:4 }} KM Away</p>
+                    </div>
+                    <ul>
+                      <li class="retailerRating">
+                        <input type="radio" [checked]="prod.rating == 5"><label for="stars1"></label>
+                        <input type="radio" [checked]="prod.rating == 4"><label for="stars2"></label>
+                        <input type="radio" [checked]="prod.rating == 3"><label for="stars3"></label>
+                        <input type="radio" [checked]="prod.rating == 2"><label for="stars4"></label>
+                        <input type="radio" [checked]="prod.rating == 1"><label for="stars5"></label>
+                      </li>|
+                      <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                        data-target="#basicExampleModal" style="font-size: 10px">
+                        View Details
+                      </button>
+                    </ul>
+                  </div>
+                  <!-- <a href="blog.html" class="read-more">Read More</a> -->
+                  <!-- Modal -->
+                  <div class="modal fade rounded" id="basicExampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content ">
+                        <div class="modal-header" style="background-color: #6668F9 !important">
+                          <h5 class="modal-title text-center" id="exampleModalLabel">Product Details</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="row">
+                            <div class="col-md-8 ml-5">
+                              <div class="list-item">
+                                <!-- <div class="blog-thumbnail">
+                                  <a href="blog-details.html"><img src="assets/img/blog/blog-post-img2.jpg"
+                                      alt="blog thumbnail"></a>
+                                </div> -->
+                                <p>{{prod.name}}</p>
+                                <h2 class="blog-title"><a href="#">{{prod.products.name}}</a></h2>
+                                <div class="blog-meta">
+                                  <div class="blog-summery">
+                                    <p>{{prod.products.price}} KES</p>
+                                    <h4>ABOUT RETAILER</h4>
+                                    <p>DESCRIPTION: {{prod.description}}</p>
+                                    <p>EMAIL: {{prod.email}}</p>
+                                    <p>CONTACT: {{prod.contact}}</p>
+                                  </div>
+                                  <ul>
+                                    <li>
+                                      <i class="fa fa-star" aria-hidden="true"></i>
+                                      <i class="fa fa-star" aria-hidden="true"></i>
+                                      <i class="fa fa-star" aria-hidden="true"></i>
+                                      <i class="fa fa-star" aria-hidden="true"></i>
+                                      <i class="fa fa-star" aria-hidden="true"></i>
+                                    </li>|
+                                    <button type="button" class="btn btn-outline-primary rounded-lg" style="font-size: 10px">
+                                      <a href="{{prod.link}}">Visit Store</a>
+                                    </button>
+                                  </ul>
+                                </div>
+                              </div>
                             </div>
-                            <ul>
-                              <li>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                              </li>|
-                              <button type="button" class="btn btn-outline-primary rounded-lg" style="font-size: 10px">
-                                <a href="{{prod.link}}">Visit Store</a>
-                              </button>
-                            </ul>
                           </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            style="background-color: #6668F9 !important">Close</button>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                      style="background-color: #6668F9 !important">Close</button>
-                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+      
+        </ng-template>
+
+        <!-- end of div -->
       </div>
     </div>
   </div>
