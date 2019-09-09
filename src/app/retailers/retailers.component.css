@@ -94,6 +94,25 @@
     opacity: 1;
   }
 
+  .retailerRating{
+    transform:rotateY(180deg);
+  }
+  .retailerRating input{
+    display: none;
+  }
+
+  .retailerRating:not(:checked) > label {
+    color: lightslategray;
+  }
+
+  .retailerRating:not(:checked) > label::before{
+    content: '★ ';
+  }
+
+  .retailerRating > input:checked ~ label{
+    color:gold;
+  }
+
   @media only screen and (max-width:600px){
     .priceModal{
       width: 90%;

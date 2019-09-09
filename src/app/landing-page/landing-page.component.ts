@@ -3,6 +3,7 @@ import { AuthService } from '../services/auth.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
+import { delay } from 'q';
 
 @Component({
   selector: 'app-landing-page',
@@ -12,6 +13,8 @@ import { ProductService } from '../services/product.service';
 export class LandingPageComponent implements OnInit {
   public searchterm: string;
   public products: string;
+  public loading:boolean = true;
+  public load:string;
 
   constructor(private auth: AuthService, private prod: ProductService, private router: Router) { }
 
@@ -20,6 +23,8 @@ export class LandingPageComponent implements OnInit {
       this.products = JSON.stringify(res);
       console.log(this.products);
       localStorage.setItem('products', this.products);
+      this.load = JSON.stringify(this.loading);
+      localStorage.setItem('loading', this.load);
       this.router.navigate(['/retailers']);
     },
     err => {

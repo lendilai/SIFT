@@ -26,7 +26,10 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 import { FiltersComponent } from './filters/filters.component';
+
 import { GmapComponent } from './gmap/gmap.component';
+
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 const firebaseConfig = {
@@ -75,7 +78,8 @@ const firebaseConfig = {
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    HttpClientModule
+    HttpClientModule, 
+    NgxSkeletonLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
