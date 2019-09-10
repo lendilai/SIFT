@@ -8,8 +8,10 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RetailersComponent } from './retailers/retailers.component';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
 import { from } from 'rxjs';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -17,18 +19,14 @@ import { from } from 'rxjs';
     LandingPageComponent,
     LoginComponent,
     RegistrationComponent,
-    RetailersComponent
+    RetailersComponent,
+    NavbarComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: LandingPageComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegistrationComponent },
-      { path: 'retailers', component: RetailersComponent }
-    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

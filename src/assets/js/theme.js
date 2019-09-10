@@ -94,9 +94,9 @@
     //=========================
     // Slick Nav Activation
     //=========================
-    $('.nav-menu > ul').slicknav({
-        'prependTo': '.mobile_menu'
-    });
+    // $('.nav-menu > ul').slicknav({
+    //     'prependTo': '.mobile_menu'
+    // });
 
     
 
