@@ -13,6 +13,8 @@ import { RetailersComponent } from './retailers/retailers.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { from } from 'rxjs';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -51,6 +53,10 @@ const firebaseConfig = {
     LoginComponent,
     RegistrationComponent,
     RetailersComponent,
+<<<<<<< HEAD
+    NavbarComponent,
+    
+=======
 
     HomeComponent,
     SignInComponent,
@@ -62,6 +68,7 @@ const firebaseConfig = {
 
     GmapComponent
 
+>>>>>>> 9dff0002a04a00598a14fd09de57135eaab4d310
   ],
   imports: [
     BrowserModule,
@@ -73,6 +80,8 @@ const firebaseConfig = {
     }),
 
     FormsModule,
+<<<<<<< HEAD
+=======
     AppRoutingModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -80,6 +89,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     HttpClientModule, 
     NgxSkeletonLoaderModule
+>>>>>>> 9dff0002a04a00598a14fd09de57135eaab4d310
   ],
   providers: [],
   bootstrap: [AppComponent]
