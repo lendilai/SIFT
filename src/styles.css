@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.customSlider .ng5-slider .ng5-slider-selection{
+    background-color:rgb(115, 117, 248);
+}
+.customSlider .ng5-slider .ng5-slider-pointer{
+    background-color:#6668F9;
+}

@@ -1,0 +1,5 @@
+<div *ngIf="auth.user$ as user">
+<p>An email has been sent</p>
+<button (click)= "auth.SendVerificationEmail()">Resend</button>
+<span>Back to<span routerLink="/sign-in">Log In</span></span>
+</div>

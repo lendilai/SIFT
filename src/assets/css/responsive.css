@@ -19,6 +19,16 @@
         height: 453px;
     }
 
+    .slider-inner h2 {
+        font-size: 32px;
+    }
+    .slider-inner h5 {
+        font-size: 28px;
+        line-height: 27px;
+        margin-bottom: 42px;
+        margin-top: 0;
+    }
+
     /*-----------------------
         Blog Page
     -----------------------*/
@@ -54,9 +64,19 @@
     .logo {
         padding: 21px 0px 17px;
     }
+    
     .slider-area{
-        height: 646px;
+        height: 100vh;
         padding-top: 0;
+    }
+    .slider-inner h2 {
+        font-size: 26px;
+    }
+    .slider-inner h5 {
+        font-size: 22px;
+        line-height: 27px;
+        margin-bottom: 42px;
+        margin-top: 0;
     }
     .service-single h2 {
         font-size: 22px;
@@ -174,7 +194,7 @@
         padding: 21px 0px 17px;
     }
     .slider-area {
-        height: auto;
+        height: 100vh;
         padding: 114px 0px 149px;
     }
     .slider-inner{
@@ -420,7 +440,7 @@
     -----------------------*/
     .crumbs-area {
         display: block;
-        height: 354px;
+        height: 254px;
     }
     .crumbs-inner h2 {
         font-size: 22px;
