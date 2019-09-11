@@ -99,6 +99,7 @@ export class RetailersComponent implements OnInit {
 
   filterByPrice(lowPrice:number, highPrice:number){
     this.dealers = this.filteredDealers.filter(dealer => dealer.products.price >= lowPrice && dealer.products.price <= highPrice);
+    this.router.navigate(['retailers'], {queryParams: {'minPrice': lowPrice, 'maxPrice': highPrice}});
   }
   
   clickedOne(){
@@ -119,5 +120,6 @@ export class RetailersComponent implements OnInit {
 
   filterByRating(){
     this.dealers = this.filteredDealers.filter(dealer => dealer.rating >= this.wantedRating);
+    this.router.navigate(['retailers'], {queryParams: {'rating': this.wantedRating}})
   }
 }
