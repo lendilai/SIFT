@@ -12,16 +12,21 @@
   <link rel="stylesheet" href="assets/css/jquery-ui.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/css/mdb.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <link rel="stylesheet" href="assets/css/slicknav.min.css">
   <link rel="stylesheet" href="assets/css/magnificpopup.css">
   <link rel="stylesheet" href="assets/css/typography.css">
   <link rel="stylesheet" href="assets/css/blog-styles.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
-  <link rel="shortcut icon" type="image/png" href="https://cdn.pixabay.com/photo/2017/08/29/11/31/creative-2692957_960_720.png">
+  <link rel="shortcut icon" type="image/png"
+    href="https://cdn.pixabay.com/photo/2017/08/29/11/31/creative-2692957_960_720.png">
 </head>
 
 <body>
+<<<<<<< HEAD
+  
+=======
   <header id="header">
     <div class="header-area">
       <div class="container">
@@ -36,23 +41,16 @@
               <div class="main-menu">
                 <nav class="nav-menu">
                   <ul>
-                    <li><a href="/sign-in">Login</a></li>
+                    <li *ngIf = '!user' ><a href="/sign-in">Login</a></li>
                     <li><a href="/createAccount">Register</a></li>
-                    <li><a href="#">Upload</a></li>
-                    <!-- <li><a href="#">
-                      <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"
-                        alt="avatar image" height="" >
-                    </a></li> -->
-                    <li> <a href="">
-                      <!-- <div *ngIf="auth.user$ | async as user; else login">
-                        <img src="{{user.photoURL}}">
-                        <button (click)="auth.signOut()">Sign Out</button>
-                      </div> -->
-                    </a> </li>
-                    <!-- <div *ngIf="auth.user$ | async as user; else login">
-                      <img src="{{user.photoURL}}">
-                      <button (click)="auth.signOut()">Sign Out</button>
-                    </div> -->
+                    <!-- <li><a href="#">Upload</a></li> -->
+                    <!-- <li> <a href="/sign-in">
+                        <div *ngIf="auth.user$ | async as user; else login">
+                          <img src="{{user.photoURL}}">
+                          <button (click)="auth.signOut()">Sign Out</button>
+                        </div>
+                      </a> </li> -->
+                    <li *ngIf="auth.user$ | async as user; else login"><a href="/sign-in" (click)="auth.signOut()">Sign Out</a></li>
                   </ul>
                 </nav>
               </div>
@@ -64,9 +62,10 @@
         </div>
       </div>
     </div>
-    
+
   </header>
 
+>>>>>>> 9dff0002a04a00598a14fd09de57135eaab4d310
   <app-root></app-root>
 
 
