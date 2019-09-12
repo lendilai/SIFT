@@ -11,6 +11,8 @@ import { User } from './user.module';
   providedIn: 'root'
 })
 export class AuthService {
+  usersData:any;
+  private logInfo:string;
   user$: Observable<any>;
   constructor(
     private fireAuth: AngularFireAuth,
@@ -21,6 +23,8 @@ export class AuthService {
     this.user$ = this.fireAuth.authState.pipe(
       switchMap(user => {
         if (user) {
+          this.usersData = user;
+          localStorage.setItem('user', JSON.stringify(this.usersData));
           return this.firestore.doc<User>('users/${user.uid}').valueChanges();
         } else {
           return of(null);
@@ -29,7 +33,14 @@ export class AuthService {
     );
   }
 
+  get loggedIn():boolean{
+    const user = JSON.parse(localStorage.getItem('user'));
+    return (user !== null && user.emailVerified !== false) ? true: false;
+  }
+
   googleSignIn() {
+    this.logInfo = JSON.stringify(true);
+    localStorage.setItem('authenticated', this.logInfo);
     return this.GeneralLogin(new auth.GoogleAuthProvider);
   }
 
@@ -40,6 +51,8 @@ export class AuthService {
           this.router.navigate(['/']);
         });
         this.updateUserData(result.user);
+        this.logInfo = JSON.stringify(true);
+        localStorage.setItem('authenticated', this.logInfo);
       }).catch((error) => {
         window.alert(error.message)
       })
@@ -103,7 +116,8 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
-      photoURL: user.photoURL
+      photoURL: user.photoURL,
+      emailVerified: user.emailVerified
     };
     console.log(data)
     return userRef.set(data, { merge: true });
