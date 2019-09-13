@@ -11,14 +11,15 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { AuthGuard } from './services/auth.guard';
+import { SecurePagesGuard } from './services/secure-pages.guard';
 import { RetailersComponent } from './retailers/retailers.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
   {path: 'forgotPassword', component: ForgotPasswordComponent},
   {path: '', component: LandingPageComponent},
-  {path: 'sign-in', component: SignInComponent},
-  {path: 'createAccount', component: SignUpComponent},
+  {path: 'sign-in', component: SignInComponent, canActivate: [SecurePagesGuard]},
+  {path: 'createAccount', component: SignUpComponent, canActivate: [SecurePagesGuard]},
   {path: 'verify', component: VerifyEmailComponent},
   {path: 'retailers', component: RetailersComponent, canActivate: [AuthGuard]}
 ];

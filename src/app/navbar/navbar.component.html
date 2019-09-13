@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <header id="header">
   <div class="header-area">
     <div class="container">
@@ -12,10 +11,11 @@
           <div class="col-md-9 hidden-xs hidden-sm">
             <div class="main-menu">
               <nav class="nav-menu">
-                <ul>
-                  <li><a href="/login">Login</a></li>
-                  <li><a href="/register">Register</a></li>
-                  <li><a href="#">Upload</a></li>
+                <ul *ngIf="authenticated">      
+                  <li><a href="#" (click)="signOut()">Sign Out</a></li>
+                </ul>
+                <ul *ngIf="!authenticated">
+                   <li><a href="/createAccount">Register</a></li>       
                 </ul>
               </nav>
             </div>
@@ -29,8 +29,3 @@
   </div>
 
 </header>
-=======
-<p>
-  navbar works!
-</p>
->>>>>>> 9dff0002a04a00598a14fd09de57135eaab4d310
