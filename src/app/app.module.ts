@@ -53,22 +53,14 @@ const firebaseConfig = {
     LoginComponent,
     RegistrationComponent,
     RetailersComponent,
-<<<<<<< HEAD
     NavbarComponent,
-    
-=======
-
     HomeComponent,
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-
     FiltersComponent,
-
     GmapComponent
-
->>>>>>> 9dff0002a04a00598a14fd09de57135eaab4d310
   ],
   imports: [
     BrowserModule,
@@ -80,8 +72,6 @@ const firebaseConfig = {
     }),
 
     FormsModule,
-<<<<<<< HEAD
-=======
     AppRoutingModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -89,7 +79,6 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     HttpClientModule, 
     NgxSkeletonLoaderModule
->>>>>>> 9dff0002a04a00598a14fd09de57135eaab4d310
   ],
   providers: [],
   bootstrap: [AppComponent]
