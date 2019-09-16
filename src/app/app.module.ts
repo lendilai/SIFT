@@ -55,16 +55,13 @@ const firebaseConfig = {
     RegistrationComponent,
     RetailersComponent,
     NavbarComponent,
-    
 
     HomeComponent,
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-
     FiltersComponent,
-
     GmapComponent
 
   ],
