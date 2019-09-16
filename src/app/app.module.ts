@@ -32,6 +32,7 @@ import { FiltersComponent } from './filters/filters.component';
 import { GmapComponent } from './gmap/gmap.component';
 
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 
 const firebaseConfig = {
@@ -54,6 +55,7 @@ const firebaseConfig = {
     RegistrationComponent,
     RetailersComponent,
     NavbarComponent,
+
     HomeComponent,
     SignInComponent,
     SignUpComponent,
@@ -61,11 +63,13 @@ const firebaseConfig = {
     VerifyEmailComponent,
     FiltersComponent,
     GmapComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     Ng5SliderModule,
+    ClickOutsideModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAJXMzzE17saSH55EZCT2m1YLsfaEWfNsY',
       libraries: ['places']

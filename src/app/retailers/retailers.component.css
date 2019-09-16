@@ -51,9 +51,29 @@
     border-radius: 5px;
     border: 1px solid lightgray;
   }
+  .filterText{
+    position: relative;
+    margin-top: 38px;
+    color: #6668F9;
+    font-size: 15px;
+    letter-spacing: 1px;
+    float: right;
+  }
+  .filterTextPrice{
+    color: #6668F9;
+    font-size: 15px;
+    letter-spacing: 1px;
+    float: right;
+  }
+
+  .filterText:hover, .filterTextPrice:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 0.6s;
+  }
   
   .modContentRating {
-    position: absolute;
+    position: inherit;
     display: flex;
     transform:rotateY(180deg);
   }
@@ -136,6 +156,10 @@
     }
   .close{
       margin-top: 2%;
+  }
+
+  .filterText{
+    margin-top: 60px;
   }
 
   .priceInputs input{
