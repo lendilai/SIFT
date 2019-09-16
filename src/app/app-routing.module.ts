@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'sign-in', component: SignInComponent, canActivate: [SecurePagesGuard]},
   {path: 'createAccount', component: SignUpComponent, canActivate: [SecurePagesGuard]},
   {path: 'verify', component: VerifyEmailComponent},
-  {path: 'retailers', component: RetailersComponent, canActivate: [AuthGuard]}
+  {path: 'retailers', component: RetailersComponent}
 ];
 
 @NgModule({
